@@ -7,7 +7,7 @@ use std::io::Error;
 
 fn main() -> Result<()> {
     // Create Output File
-    let mut file = File::create("output.txt")?;
+    let mut file = File::create("primes.txt")?;
 
     // Run Prime Algorithm and Measure Execution Time
     let start = Instant::now();
