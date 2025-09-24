@@ -15,7 +15,7 @@ fn main() -> Result<()> {
     let end = start.elapsed();
 
     // Output Results
-    write!(file, "Execution Time: {} seconds\t", end.as_secs())?;
+    write!(file, "Execution Time: {} seconds\t", end.as_secs_f32())?;
     write!(file, "{} Primes Found\t", par_primes.len())?;
     writeln!(file, "Sum of Primes: {}", par_primes.iter().sum::<usize>())?;
     writeln!(file, "Top 10 Largest Primes:")?;
@@ -72,7 +72,7 @@ pub fn par_prime_finder(n: usize, threads: usize) -> Result<Vec<usize>> {
     let base_primes: Vec<usize> = (2..=nsq).filter(|&i| sieve[i]).collect();
     
     // Set Size of Chunks According to Thread Count (8)
-    let chunk_size = (n + 1 - nsq) / threads + 1;
+    let chunk_size = (n - nsq - 1) / threads + 1;
     
     // Run Parallel Sieve by Spawning One Thread Per Chunk to Mark Multiples
     // of Base Primes

@@ -2,7 +2,7 @@
 ## Ryan Harding, Due 9/24, COP6616
 
 # Compilation and Execution
-## RECOMMENDED: Cargo
+## With Cargo
 As I used Cargo as my environment for this project, executing with Cargo is recommended. To do so, run either of the following two commands:
 
     cargo run  
@@ -20,7 +20,7 @@ As the program uses all standard Rust libraries, it will compile and run without
     rustc main.rs  
     ./main  
 
-The first command compiles, the second executes. Doing so outputs the results in the directory with "main.rs", not the project root.  
+The first command compiles, the second executes. Doing so outputs the results in the directory with "main.rs", not the project root. In my experiments this ran slightly faster than using Cargo.
 
 # Other Files
 "sequential.txt" is an example output produced using a sequential sieve.  
