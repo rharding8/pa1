@@ -83,7 +83,7 @@ pub fn par_prime_finder(n: usize, threads: usize) -> Result<Vec<usize>> {
         let hand = thread::spawn(move || {
             let mut chunk = vec![true; chunk_size];
             for &p in &base {
-                let mut multiple = if start <= p {
+                let mut multiple = if start <= (p*p) {
                     p * p
                 } else {
                     let r = (start + p - 1) / p;
